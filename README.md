@@ -4,6 +4,13 @@
 xfwm4 theme collections
 
 
+## clone
+
+``` sh
+$ git clone https://github.com/samwhelp/theme-xfwm4-collections.git
+```
+
+
 ## themes
 
 * [Pastel_Dark](themes/Pastel_Dark)
