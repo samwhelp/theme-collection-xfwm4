@@ -15,6 +15,7 @@ xfwm4 theme collections
 ## doc
 
 * [https://wiki.xfce.org/howto/xfwm4_theme](https://wiki.xfce.org/howto/xfwm4_theme)
+* [https://en.wikipedia.org/wiki/X_PixMap](https://en.wikipedia.org/wiki/X_PixMap)
 
 ## themes directory
 
