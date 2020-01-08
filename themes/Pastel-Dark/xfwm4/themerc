@@ -1,12 +1,38 @@
-active_text_color=#FFFFFF
+
+
+################################################################################
+### Head: main
+##
+
+active_text_color=#EEEEEE
 button_offset=0
 button_spacing=0
 full_width_title=true
-inactive_text_color=#FFFFFF
+inactive_text_color=#AAAAAA
 maximized_offset=0
 show_app_icon=false
 title_horizontal_offset=0
 title_vertical_offset_active=1
 title_vertical_offset_inactive=1
 
+##
+### Tail: main
+################################################################################
+
+
+################################################################################
+### Head: button_layout
+##
+
+## O = Option menu
+## T = Stick
+## H = hide
+## S = shade
+## M = maximize
+## C = close
+## | = title
 button_layout=O|SHMC
+
+##
+### Tail: button_layout
+################################################################################

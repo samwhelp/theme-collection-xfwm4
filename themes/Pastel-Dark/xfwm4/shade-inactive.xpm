@@ -1,8 +1,8 @@
 /* XPM */
-static char * shade_active_xpm[] = {
+static char * shade_inactive_xpm[] = {
 "24 24 3 1",
 " 	c None",
-".	c #FFFFFF",
+".	c #454545",
 "+	c #B9FEC8",
 "............++++++++++++",
 "..........++++++++++++++",
