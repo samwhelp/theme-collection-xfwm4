@@ -1,7 +1,8 @@
 
 # theme-xfwm4-collections
 
-xfwm4 theme collections
+
+[xfwm4 theme collections](https://github.com/samwhelp/theme-xfwm4-collections)
 
 
 ## clone
