@@ -186,3 +186,10 @@ run
 ``` sh
 $ ./xfwm4-theme-ctrl install_all
 ```
+
+
+## Other Tool
+
+* [style-de-xfce](https://github.com/samwhelp/play-ubuntu-18.04-plan/tree/master/prototype/style-de/xfce)
+* [style-switch-xfce](https://github.com/samwhelp/play-ubuntu-18.04-plan/tree/master/project/style-tool/xfce/style-switch)
+* [style-ctrl-xfce](https://github.com/samwhelp/play-ubuntu-18.04-plan/tree/master/project/style-tool/xfce/style-ctrl)
