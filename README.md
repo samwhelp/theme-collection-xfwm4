@@ -77,8 +77,16 @@ find ~/.themes/ -name xfwm4
 
 ### How to find appearance-install-theme
 
+run
+
 ``` sh
 dpkg -L xfce4-settings | grep appearance-install-theme
+```
+
+or run
+
+``` sh
+dpkg -L xfce4-settings | grep install
 ```
 
 show
