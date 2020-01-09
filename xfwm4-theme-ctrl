@@ -204,6 +204,12 @@ sys_xfce_set_wm_theme () {
 
 }
 
+sys_xfce_get_wm_theme () {
+
+	xfconf-query -c 'xfwm4' -p '/general/theme'
+
+}
+
 sys_xfce_set_ui_theme () {
 
 	local ui_theme="$1"
@@ -216,6 +222,12 @@ sys_xfce_set_ui_theme () {
 
 }
 
+sys_xfce_get_ui_theme () {
+
+	xfconf-query -c 'xsettings' -p '/Net/ThemeName'
+
+}
+
 sys_xfce_set_icon_theme () {
 
 	local icon_theme="$1"
@@ -225,6 +237,12 @@ sys_xfce_set_icon_theme () {
 
 	xfconf-query -c 'xsettings' -p '/Net/IconThemeName' -s "$icon_theme"
 	echo "xfconf-query -c 'xsettings' -p '/Net/IconThemeName' -s '$icon_theme'"
+
+}
+
+sys_xfce_get_icon_theme () {
+
+	xfconf-query -c 'xsettings' -p '/Net/IconThemeName'
 
 }
 
@@ -267,6 +285,47 @@ sys_xfce_set_cursor_theme () {
 
 }
 
+sys_xfce_get_cursor_theme () {
+	local name=$(xfconf-query -c 'xsettings' -p '/Gtk/CursorThemeName')
+
+	local size=$(xfconf-query -c 'xsettings' -p '/Gtk/CursorThemeSize')
+
+	echo "${name} ${size}"
+}
+
+sys_xfce_get_all () {
+
+	local wm_theme=$(sys_xfce_get_wm_theme)
+	local ui_theme=$(sys_xfce_get_ui_theme)
+	local icon_theme=$(sys_xfce_get_icon_theme)
+	local cursor_theme=$(sys_xfce_get_cursor_theme)
+
+	echo "wm_theme: ${wm_theme}"
+	echo "ui_theme: ${ui_theme}"
+	echo "icon_theme: ${icon_theme}"
+	echo "cursor_theme: ${cursor_theme}"
+
+}
+
+
+sys_xfce_get_all_default () {
+
+	local wm_theme=$(sys_xfce_get_wm_theme_default)
+	local ui_theme=$(sys_xfce_get_ui_theme_default)
+	local icon_theme=$(sys_xfce_get_icon_theme_default)
+	local cursor_theme=$(sys_xfce_get_cursor_theme_default)
+	local cursor_theme_for_dark=$(sys_xfce_get_cursor_theme_default_for_dark)
+	local cursor_theme_for_light=$(sys_xfce_get_cursor_theme_default_for_light)
+
+	echo "wm_theme: ${wm_theme}"
+	echo "ui_theme: ${ui_theme}"
+	echo "icon_theme: ${icon_theme}"
+	echo "cursor_theme: ${cursor_theme}"
+	echo "cursor_theme_for_dark: ${cursor_theme_for_dark}"
+	echo "cursor_theme_for_light: ${cursor_theme_for_light}"
+
+}
+
 sys_xfce_set_all_default () {
 
 	sys_xfce_set_wm_theme_default
@@ -276,42 +335,76 @@ sys_xfce_set_all_default () {
 
 }
 
+sys_xfce_get_wm_theme_default () {
+
+	echo 'Breeze'
+
+}
+
 sys_xfce_set_wm_theme_default () {
 
-	sys_xfce_set_wm_theme 'Breeze'
+	sys_xfce_set_wm_theme $(sys_xfce_get_wm_theme_default)
+
+}
+
+sys_xfce_get_ui_theme_default () {
+
+	echo 'NumixBlue'
 
 }
 
 sys_xfce_set_ui_theme_default () {
 
-	sys_xfce_set_ui_theme 'NumixBlue'
+	sys_xfce_set_ui_theme $(sys_xfce_get_ui_theme_default)
+
+}
+
+sys_xfce_get_icon_theme_default () {
+
+	echo 'Numix'
 
 }
 
 sys_xfce_set_icon_theme_default () {
 
-	sys_xfce_set_icon_theme 'Numix'
+	sys_xfce_set_icon_theme $(sys_xfce_get_icon_theme_default)
+
+}
+
+sys_xfce_get_cursor_theme_default () {
+
+	echo 'breeze_cursors' 24
 
 }
 
 sys_xfce_set_cursor_theme_default () {
 
-	sys_xfce_set_cursor_theme 'breeze_cursors' 24
+	sys_xfce_set_cursor_theme $(sys_xfce_get_cursor_theme_default)
+
+}
+
+sys_xfce_get_cursor_theme_default_for_dark () {
+
+	echo 'Breeze_Snow' 24
 
 }
 
 sys_xfce_set_cursor_theme_default_for_dark () {
 
-	sys_xfce_set_cursor_theme 'Breeze_Snow' 24
+	sys_xfce_set_cursor_theme $(sys_xfce_get_cursor_theme_default_for_dark)
+}
+
+sys_xfce_get_cursor_theme_default_for_light () {
+
+	echo 'breeze_cursors' 24
 
 }
 
 sys_xfce_set_cursor_theme_default_for_light () {
 
-	sys_xfce_set_cursor_theme 'breeze_cursors' 24
+	sys_xfce_set_cursor_theme $(sys_xfce_get_cursor_theme_default_for_light)
 
 }
-
 
 ##
 ### Tail: Sys
@@ -394,6 +487,17 @@ xtc_list () {
 	ls "themes" -1
 }
 
+xtc_now () {
+	local wm_theme="$1"
+
+	if [ "none${wm_theme}" = "none" ]; then
+		sys_xfce_get_wm_theme
+		return
+	fi
+
+	sys_xfce_set_wm_theme "$wm_theme"
+}
+
 ##
 ### Tail: Model
 ################################################################################
@@ -422,6 +526,11 @@ sub_run_list () {
 	xtc_list $@
 }
 
+sub_run_now () {
+	#echo "sub_run_now"
+	xtc_now $@
+}
+
 ##
 ### Tail: SubCmd
 ################################################################################
@@ -445,12 +554,23 @@ Usage:
 
 	$ $cmd_name install_all
 
+	$ $cmd_name now [name]
+
 
 Example:
+
+	## help
+
 	$ $cmd_name
 	$ $cmd_name help
 
+
+	## available to install
+
 	$ $cmd_name list
+
+
+	## install
 
 	$ $cmd_name install 'Pastel_Dark'
 	$ $cmd_name install 'Pastel_Dark_NoTitle'
@@ -460,6 +580,17 @@ Example:
 	$ $cmd_name install_all
 
 
+	## get current
+
+	$ $cmd_name now
+
+
+	## set current
+
+	$ $cmd_name now 'Pastel_Dark'
+	$ $cmd_name now 'Pastel_Dark_NoTitle'
+	$ $cmd_name now 'Pastel_Light'
+	$ $cmd_name now 'Pastel_Light_NoTitle'
 
 Debug:
 	$ export DEBUG_THEME_CTRL=true

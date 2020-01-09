@@ -132,12 +132,23 @@ Usage:
 
 	$ xfwm4-theme-ctrl install_all
 
+	$ xfwm4-theme-ctrl now [name]
+
 
 Example:
+
+	## help
+
 	$ xfwm4-theme-ctrl
 	$ xfwm4-theme-ctrl help
 
+
+	## available to install
+
 	$ xfwm4-theme-ctrl list
+
+
+	## install
 
 	$ xfwm4-theme-ctrl install 'Pastel_Dark'
 	$ xfwm4-theme-ctrl install 'Pastel_Dark_NoTitle'
@@ -147,9 +158,21 @@ Example:
 	$ xfwm4-theme-ctrl install_all
 
 
+	## get current
+
+	$ xfwm4-theme-ctrl now
+
+
+	## set current
+
+	$ xfwm4-theme-ctrl now 'Pastel_Dark'
+	$ xfwm4-theme-ctrl now 'Pastel_Dark_NoTitle'
+	$ xfwm4-theme-ctrl now 'Pastel_Light'
+	$ xfwm4-theme-ctrl now 'Pastel_Light_NoTitle'
 
 Debug:
 	$ export DEBUG_THEME_CTRL=true
+
 ```
 
 ### show available theme list
@@ -185,6 +208,22 @@ run
 
 ``` sh
 $ ./xfwm4-theme-ctrl install_all
+```
+
+### get current xfwm4 theme
+
+run
+
+``` sh
+$ ./xfwm4-theme-ctrl now
+```
+
+### set current xfwm4 theme
+
+run
+
+``` sh
+$ ./xfwm4-theme-ctrl now  'Pastel_Dark'
 ```
 
 
