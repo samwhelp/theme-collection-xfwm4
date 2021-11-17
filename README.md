@@ -14,10 +14,29 @@ $ git clone https://github.com/samwhelp/theme-xfwm4-collections.git
 
 ## themes
 
-* [Pastel_Dark](themes/Pastel_Dark)
-* [Pastel_Dark_NoTitle](themes/Pastel_Dark_NoTitle)
-* [Pastel_Light](themes/Pastel_Light)
-* [Pastel_Light_NoTitle](themes/Pastel_Light_NoTitle)
+### Pastel
+
+| Pastel |
+| --- |
+| [Pastel_Dark](themes/Pastel_Dark) |
+| [Pastel_Dark_NoTitle](themes/Pastel_Dark_NoTitle) |
+| [Pastel_Light](themes/Pastel_Light) |
+| [Pastel_Light_NoTitle](themes/Pastel_Light_NoTitle) |
+
+### RGaps
+
+| RGaps |
+| --- |
+| [RGapsBlack](themes/RGapsBlack) |
+| [RGapsBlackNoButtons](themes/RGapsBlackNoButtons) |
+| [RGapsBlend](themes/RGapsBlend) |
+| [RGapsBlendNoButtons](themes/RGapsBlendNoButtons) |
+| [RGapsLine](themes/RGapsLine) |
+| [RGapsLineNoButtons](themes/RGapsLineNoButtons) |
+
+> www.gnome-look.org / XFWM4 Themes / [RGaps](https://www.gnome-look.org/p/1174081/)
+
+> note-about-manjaro / Theme / [RGaps](https://samwhelp.github.io/note-about-manjaro/read/theme/source/rgaps.html)
 
 
 ## doc
