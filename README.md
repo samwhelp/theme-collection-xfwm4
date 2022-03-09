@@ -1,14 +1,14 @@
 
-# theme-xfwm4-collections
+# theme-collections-xfwm4
 
 
-[xfwm4 theme collections](https://github.com/samwhelp/theme-xfwm4-collections)
+* [theme-collections-xfwm4](https://github.com/samwhelp/theme-collections-xfwm4)
 
 
 ## clone
 
 ``` sh
-$ git clone https://github.com/samwhelp/theme-xfwm4-collections.git
+$ git clone https://github.com/samwhelp/theme-collections-xfwm4.git
 ```
 
 
@@ -38,6 +38,7 @@ $ git clone https://github.com/samwhelp/theme-xfwm4-collections.git
 
 > note-about-manjaro / Theme / [RGaps](https://samwhelp.github.io/note-about-manjaro/read/theme/source/rgaps.html)
 
+> note-about-ubuntu / Theme / [RGaps](https://samwhelp.github.io/note-about-ubuntu/read/theme/source/rgaps.html)
 
 ## doc
 
