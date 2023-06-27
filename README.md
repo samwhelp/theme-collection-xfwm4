@@ -1,14 +1,14 @@
 
-# theme-collections-xfwm4
+# theme-collection-xfwm4
 
 
-* [theme-collections-xfwm4](https://github.com/samwhelp/theme-collections-xfwm4)
+* [theme-collection-xfwm4](https://github.com/samwhelp/theme-collection-xfwm4)
 
 
 ## clone
 
 ``` sh
-$ git clone https://github.com/samwhelp/theme-collections-xfwm4.git
+$ git clone https://github.com/samwhelp/theme-collection-xfwm4.git
 ```
 
 
